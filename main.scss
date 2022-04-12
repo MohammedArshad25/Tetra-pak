@@ -1,0 +1,92 @@
+@import "variables";
+
+@import "mixins";
+
+html {
+    font-family: $font;
+    font-size: $normal-text;
+
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+}
+
+h1,h3 {
+    font-weight: $text-bold;
+}
+
+p{
+    font-size: $small-text;
+}
+
+.mini-font{
+    font-size: $warning-text;
+}
+
+::placeholder{
+    font-family: $font;
+}
+
+.input-division {
+    display: flex;
+    flex-direction: column;
+    margin: $margin;
+    margin-left: 0;
+}
+
+.tetra-logo{
+    height: $logo-size;
+    display: block;
+    margin: auto;
+}
+
+.logo-division {
+    background-color: white;
+}
+
+.nav-section {
+    width : 200px;
+    background-color: $color;
+}
+
+.form-section {
+    margin-top: 30px;
+    margin-left:30px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.input-field{
+    @include basic-box;
+    width : $input-width;
+    border: $border;
+    box-sizing: $box;
+}
+
+.submit-button {
+    @include basic-box;
+    background-color: $color;
+    border: none;
+    color : white;
+    font-family: $font;
+
+}
+
+.custom-select{
+    @include basic-box;
+    width : fit-content;
+    color : $color;
+    border : 1px solid $color;
+}
+
+.errortext{
+    color : $error-color;
+}
+
+.error{
+    border: 0.5px solid $error-color;
+}

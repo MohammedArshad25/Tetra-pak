@@ -1,0 +1,113 @@
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+h1, h3 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.mini-font {
+  font-size: 0.7rem;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+::placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+.input-division {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.tetra-logo {
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+
+.logo-division {
+  background-color: white;
+}
+
+.nav-section {
+  width: 200px;
+  background-color: #023f88;
+}
+
+.form-section {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 5px;
+  width: 500px;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.submit-button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #023f88;
+  border: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.custom-select {
+  padding: 10px;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #023f88;
+  border: 1px solid #023f88;
+}
+
+.errortext {
+  color: red;
+}
+
+.error {
+  border: 0.5px solid red;
+}
+/*# sourceMappingURL=main.css.map */
