@@ -18,7 +18,7 @@ function validateForm() {
         document.getElementById('radioError').innerHTML="Please select one option";
          }
 
-    for(i in listOfId)
+    for(let i in listOfId)
     {
         let currentId= listOfId[i].id
         let inputElement = document.getElementById(`${currentId}`);
