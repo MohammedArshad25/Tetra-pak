@@ -11,35 +11,35 @@ body {
   display: flex;
 }
 
-h1, h3 {
+.cots-support__nav {
+  width: 200px;
+  background-color: #023f88;
+}
+
+.cots-support__nav__logo-section {
+  background-color: white;
+}
+
+.cots-support__nav__logo-image {
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+
+.cots-support__main {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.cots-support__main h1, .cots-support__main h2 {
   font-weight: 700;
 }
 
-p {
+.cots-support__main__font--medium {
   font-size: 0.9rem;
 }
 
-.mini-font {
-  font-size: 0.7rem;
-}
-
-::-webkit-input-placeholder {
-  font-family: "Montserrat", sans-serif;
-}
-
-:-ms-input-placeholder {
-  font-family: "Montserrat", sans-serif;
-}
-
-::-ms-input-placeholder {
-  font-family: "Montserrat", sans-serif;
-}
-
-::placeholder {
-  font-family: "Montserrat", sans-serif;
-}
-
-.input-division {
+.cots-support__main__form__input-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,31 +51,11 @@ p {
   margin-left: 0;
 }
 
-.tetra-logo {
-  height: 100px;
-  display: block;
-  margin: auto;
-}
-
-.logo-division {
-  background-color: white;
-}
-
-.nav-section {
-  width: 200px;
-  background-color: #023f88;
-}
-
-.form-section {
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
-label {
+.cots-support__main__form__input-wrapper label {
   margin-bottom: 5px;
 }
 
-.input-field {
+.cots-support__main__form__input-field {
   padding: 10px;
   border-radius: 5px;
   width: 500px;
@@ -84,16 +64,27 @@ label {
           box-sizing: border-box;
 }
 
-.submit-button {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #023f88;
-  border: none;
-  color: white;
+.cots-support__main__form__input-field ::-webkit-input-placeholder {
   font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
-.custom-select {
+.cots-support__main__form__input-field :-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.cots-support__main__form__input-field ::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.cots-support__main__form__input-field ::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.cots-support__main__form__custom-select {
   padding: 10px;
   border-radius: 5px;
   width: -webkit-fit-content;
@@ -103,11 +94,25 @@ label {
   border: 1px solid #023f88;
 }
 
-.errortext {
+.cots-support__main__form__font--mini {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.cots-support__main__form__errortext {
   color: red;
 }
 
-.error {
+.cots-support__main__form__error {
   border: 0.5px solid red;
+}
+
+.cots-support__main__form__submit-button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #023f88;
+  border: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=main.css.map */

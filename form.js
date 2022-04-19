@@ -1,19 +1,19 @@
 function validateForm() {
     event.preventDefault()
-    //tchncl sprt cmpny cstmrSite afctdSystm prdctInvlvd shrtDec qstn
-    let technical = document.getElementById('tchncl');
-    let support = document.getElementById('sprt');
-    let company = document.getElementById('cmpny');
-    let customerSite = document.getElementById('cstmrSite');
-    let affectedSystem = document.getElementById('afctdSystm');
-    let productInvolved = document.getElementById('prdctInvlvd');
-    let shortDescription = document.getElementById('shrtDesc');
-    let question = document.getElementById("qstn");
+
+    let technical = document.getElementById('technicalIssues');
+    let support = document.getElementById('productSupport');
+    let company = document.getElementById('company');
+    let customerSite = document.getElementById('customerSite');
+    let affectedSystem = document.getElementById('affectedSystems');
+    let productInvolved = document.getElementById('productInvolved');
+    let shortDescription = document.getElementById('shortDescription');
+    let question = document.getElementById("question");
 
     let listOfId = [company,customerSite,affectedSystem,productInvolved,shortDescription, question]
 
     if(technical.checked || support.checked ) {
-        document.getElementById('radioError').innerHTML=""
+        document.getElementById('radioError').innerHTML="";
     } else {
         document.getElementById('radioError').innerHTML="Please select one option";
          }

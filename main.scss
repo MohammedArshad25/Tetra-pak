@@ -5,7 +5,6 @@
 html {
     font-family: $font;
     font-size: $normal-text;
-
 }
 body{
     margin:0;
@@ -13,80 +12,144 @@ body{
     display: flex;
 }
 
-h1,h3 {
-    font-weight: $text-bold;
+.cots-support {
+    &__nav {
+
+        width : 200px;
+        background-color: $color;
+
+        &__logo-section{
+            background-color: white;
+        }
+
+        &__logo-image{
+            height: $logo-size;
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &__main {
+
+        margin-top: 30px;
+        margin-left:30px;
+
+        h1,h2 {
+            font-weight: $text-bold;
+        }
+
+        
+        &__font--medium {
+            font-size: $small-text;
+        }
+
+        &__form {
+             
+            &__input-wrapper {
+                display: flex;
+                flex-direction: column;
+                margin: $margin;
+                margin-left: 0;
+
+                label {
+                    margin-bottom: 5px;
+                }
+
+            }
+
+            &__input-field {
+                @include basic-box;
+                width : $input-width;
+                border: $border;
+                box-sizing: $box;
+                            
+                ::placeholder {
+                    font-family: $font;
+                    font-size: $normal-text;
+                }
+            }
+
+            &__custom-select {
+                    @include basic-box;
+                    width : fit-content;
+                    color : $color;
+                    border : 1px solid $color;
+                
+            }
+
+            &__font--mini{
+                font-size: $warning-text;
+                margin :0;
+            }
+
+            &__errortext {
+                color : $error-color;
+            }
+
+            &__error {
+                border: 0.5px solid $error-color;
+            }
+
+            &__submit-button {
+                    @include basic-box;
+                    background-color: $color;
+                    border: none;
+                    color : white;
+                    font-family: $font;
+            
+            }
+               
+
+        }
+    }
+
 }
 
-p{
-    font-size: $small-text;
-}
 
-.mini-font{
-    font-size: $warning-text;
-}
 
-::placeholder{
-    font-family: $font;
-}
 
-.input-division {
-    display: flex;
-    flex-direction: column;
-    margin: $margin;
-    margin-left: 0;
-}
 
-.tetra-logo{
-    height: $logo-size;
-    display: block;
-    margin: auto;
-}
 
-.logo-division {
-    background-color: white;
-}
 
-.nav-section {
-    width : 200px;
-    background-color: $color;
-}
+// .input__division {
+//     display: flex;
+//     flex-direction: column;
+//     margin: $margin;
+//     margin-left: 0;
+// }
 
-.form-section {
-    margin-top: 30px;
-    margin-left:30px;
-}
+// .tetra__logo{
+//     height: $logo-size;
+//     display: block;
+//     margin: auto;
+// }
 
-label {
-    margin-bottom: 5px;
-}
+// .logo__division {
+//     background-color: white;
+// }
 
-.input-field{
-    @include basic-box;
-    width : $input-width;
-    border: $border;
-    box-sizing: $box;
-}
+// .nav__section {
+//     width : 200px;
+//     background-color: $color;
+// }
 
-.submit-button {
-    @include basic-box;
-    background-color: $color;
-    border: none;
-    color : white;
-    font-family: $font;
+// .form__section {
+//     margin-top: 30px;
+//     margin-left:30px;
+// }
 
-}
+// label {
+//     margin-bottom: 5px;
+// }
 
-.custom-select{
-    @include basic-box;
-    width : fit-content;
-    color : $color;
-    border : 1px solid $color;
-}
+// .input__field{
+//     @include basic-box;
+//     width : $input-width;
+//     border: $border;
+//     box-sizing: $box;
+// }
 
-.errortext{
-    color : $error-color;
-}
 
-.error{
-    border: 0.5px solid $error-color;
-}
+
+
+

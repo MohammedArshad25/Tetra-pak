@@ -1,122 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/main.css"rel="stylesheet" >
+    <link href="/main.css" rel="stylesheet">
     <title>COTS-Support</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <section class="nav-section">
-        <div class="logo-division">
-            <img src="./tetra-pak-two-liner.png" class="tetra-logo"/>
-        </div>
+    <section class="cots-support__nav">
+        <section class="cots-support__nav__logo-section">
+            <img src="./tetra-pak-two-liner.png" alt="Tetra-logo" class="cots-support__nav__logo-image" />
+        </section>
     </section>
-    
-    <section class="form-section">
-        <h1>Tetra Pak&reg; PlantMaster COTS Support</h1>
 
-        <p>The purpose of this service is to log a technicla issue or product support question reallted  to the Tetra Pak PlantMaster
-            <br>Commercial of-the-shelf(COTS) offering-For other queries please use the standard commnication channels.
+    <main class="cots-support__main">
+        <header>
+            <h1>Tetra Pak&reg; PlantMaster COTS Support</h1>
+        </header>
+
+        <p class="cots-support__main__font--medium">The purpose of this service is to log a technical
+            issue or product support question reallted to the Tetra Pak PlantMaster
+            <br>Commercial of-the-shelf(COTS) offering-For other queries please use
+            the standard commnication channels.
         </p>
-        <form onsubmit="validateForm()">
-            <h4>Send request</h4>
-            <div class="input-division" id="inptDvsn">
-                <div>
-                    <input type="radio" id="tchncl" name="radio" value="technical"/>
-                    <label for="technical">Technical Issues</label>
-                </div>
 
-                <div>
-                    <input type="radio" id="sprt" name="radio" value="product"/>
-                    <label for="product">Product Support</label>
-                </div>
-                <div id="radioError" class="errortext"></div>
-            </div>
+        <form onsubmit="validateForm()" class="cots-support__form">
+            <h2>Send request</h2>
+            <section class="cots-support__main__form__input-wrapper" id="radio-section">
+                <section>
+                    <input type="radio" id="technicalIssues" name="radio" value="technical"  required/>
+                    <label for="technicalIssues">Technical Issues</label>
+                </section>
+                <section>
+                    <input type="radio" id="productSupport" name="radio" value="product" required/>
+                    <label for="productSupport">Product Support</label>
+                </section>
+                <section id="radioError" class="cots-support__main__form__errortext"></section>
+            </section>
 
-
-            <div class="input-division">
+            <section class="cots-support__main__form__input-wrapper">
                 <label for="company">Company</label>
-                <input type="text" class="input-field" id="cmpny"/>
-                <div id="cmpnyError" class="errortext"></div>
-            </div>
+                <input type="text" class="cots-support__main__form__input-field" id="company" required />
+                <section id="companyError" class="cots-support__main__form__errortext"></section>
+            </section>
 
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="customerSite">Customer Site</label>
+                <input type="text" class="cots-support__main__form__input-field" id="customerSite" />
+                <section id="customerSiteError" class="cots-support__main__form__errortext"></section>
+            </section>
 
-            <div class="input-division">
-                <label for="customer site">Customer Site</label>
-                <input type="text" class="input-field" id="cstmrSite"/>
-                <div id="cstmrSiteError" class="errortext"></div>
-            </div>
-
-            <div class="input-division">
-                <label for="affected systems">Affected Systems</label>
-                <select class="input-field" id="afctdSystm">
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="affectedSystems">Affected Systems</label>
+                <select class="cots-support__main__form__input-field" id="affectedSystems" required>
                     <option value="">Select from list....</option>
                 </select>
-                <div id="afctdSystmError" class="errortext"></div>
-            </div>
+                <section id="affectedSystemsError" class="cots-support__main__form__errortext"></section>
+            </section>
 
-            <div class="input-division">
-                <label for="product involved">Product Involved</label>
-                <select class="input-field" id="prdctInvlvd">
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="productInvolved">Product Involved</label>
+                <select class="cots-support__main__form__input-field" id="productInvolved" required>
                     <option value="">Select from list....</option>
                 </select>
-                <div id="prdctInvlvdError" class="errortext"></div>
-            </div>
+                <section id="productInvolvedError" class="cots-support__main__form__errortext"></section>
+            </section>
 
-            <div class="input-division">
-                <label for="software version">Software version (Optional)</label>
-                <input type="text" class="input-field" id="sftwrvrsn"/>
-            </div>
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="softwareVersion">Software version (Optional)</label>
+                <input type="text" class="cots-support__main__form__input-field" id="softwareVersion" />
+            </section>
 
-            <div class="input-division">
-                <label for="EL num">Engineering license serial number (Optional)</label>
-                <input type="text" class="input-field" id="ELnum"/>
-            </div>
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="ELnum">Engineering license serial number (Optional)</label>
+                <input type="text" class="cots-support__main__form__input-field" id="ELnum" />
+            </section>
 
-            <div class="input-division">
-                <label for="short description">Short Description</label>
-                <input type="text" class="input-field" id="shrtDesc"/>
-                <div id="shrtDescError" class="errortext"></div>
-            </div>
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="shortDescription">Short Description</label>
+                <input type="text" class="cots-support__main__form__input-field" id="shortDescription" required/>
+                <section id="shortDescriptionError" class="cots-support__main__form__errortext"></section>
+            </section>
 
-            <div class="input-division">
-                <label >Select a file (Optional)</label>
-                <label for="select file" class="custom-select">Select a file &nbsp; +</label>
-                <input type="file" id="select file"  hidden/>
-                <lable class="mini-font">Max File size: 10MB</lable>
-                <label class="mini-font">File Formats:No exe,zip </label>
-            </div>
+            <section class="cots-support__main__form__input-wrapper">
+                <label>Select a file (Optional)</label>
+                <label for="selectFile" class="cots-support__main__form__custom-select">Select a file &nbsp; +</label>
+                <input type="file" id="selectFile" hidden />
+                <p class="cots-support__main__form__font--mini">Max File size: 10MB</p>
+                <p class="cots-support__main__form__font--mini">File Formats:No exe,zip </p>
+            </section>
 
-            <div class="input-division">
-                <label>Question</label>
-                <textarea class="input-field" rows="5" cols="60" id="qstn"></textarea>
-                <div id="qstnError" class="errortext"></div>
-            </div>
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="question">Question</label>
+                <textarea class="cots-support__main__form__input-field" rows="5" cols="60" id="question" required></textarea>
+                <section id="questionError" class="cots-support__main__form__errortext"></section>
+            </section>
 
-            <div class="input-division">
+            <section class="cots-support__main__form__input-wrapper">
                 <label for="name">Name</label>
-                <input type="text" class="input-field" id="name" placeholder="John Doe"/>
-            </div>
+                <input type="text" class="cots-support__main__form__input-field" id="name" placeholder="John Doe" />
+            </section>
 
-            <div class="input-division">
-                <label for="email" >Email</label>
-                <input type="mail" class="input-field" id="email" placeholder="johndoe@gmail.com"/>
-            </div>
+            <section class="cots-support__main__form__input-wrapper">
+                <label for="email">Email</label>
+                <input type="mail" class="cots-support__main__form__input-field" id="email" placeholder="johndoe@gmail.com" />
+            </section>
 
-            <div class="input-division">
+            <section class="cots-support__main__form__input-wrapper">
                 <label for="telephone">Telephone(Optional)</label>
-                <input type="tel" class="input-field" id="software version"/>
-            </div>
+                <input type="tel" class="cots-support__main__form__input-field" id="telephone" />
+            </section>
 
-            <button class="submit-button">Submit request &nbsp; &nbsp; &#8594</button>
+            <button class="cots-support__main__form__submit-button">Submit request &nbsp; &nbsp; &#8594</button>
 
         </form>
-    </section>
+    </main>
     <script src="./form.js"></script>
 </body>
 
