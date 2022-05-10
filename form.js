@@ -1,3 +1,27 @@
+getObject();
+
+// import { message } from "./script1";
+// console.log(message);
+
+ let obj="";
+async function getObject()
+{
+    obj = await  fetch('./data.json').then(response => {
+        return response.json();
+      }).then(obj => {
+        return obj
+      }).catch(err => {
+        console.log("error")
+      });
+
+      createHTML(obj);
+
+}
+
+
+
+
+
 function validateForm() {
     event.preventDefault()
 
@@ -34,3 +58,28 @@ function validateForm() {
     }
     
 }
+
+
+
+
+function createHTML(obj) {
+    var rawTemplate = document.getElementById("ddtemplate").innerHTML;
+    var compiledTemplate = Handlebars.compile(rawTemplate);
+    var ourGeneratedHTML = compiledTemplate(obj);
+    console.log(obj)
+    var petsContainer = document.getElementById("affectedSystems");
+    petsContainer.insertAdjacentHTML('beforeend',ourGeneratedHTML);
+}
+
+function setProductList() {
+    let affectedSystem = document.getElementById("affectedSystems").value;
+    var rawTemplate = document.getElementById("pitemplate").innerHTML;
+    var compiledTemplate = Handlebars.compile(rawTemplate);
+    var ourGeneratedHTML = compiledTemplate(obj.data[affectedSystem]);
+    var ASContainer = document.getElementById("productInvolved");
+    ASContainer.innerHTML= ourGeneratedHTML;
+
+}
+
+
+

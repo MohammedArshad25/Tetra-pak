@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
 </head>
 
 <body>
@@ -58,7 +60,7 @@
 
             <section class="cots-support__main__form__input-wrapper">
                 <label for="affectedSystems">Affected Systems</label>
-                <select class="cots-support__main__form__input-field" id="affectedSystems" required>
+                <select onchange="setProductList()" class="cots-support__main__form__input-field" id="affectedSystems" required>
                     <option value="">Select from list....</option>
                 </select>
                 <section id="affectedSystemsError" class="cots-support__main__form__errortext"></section>
@@ -66,8 +68,7 @@
 
             <section class="cots-support__main__form__input-wrapper">
                 <label for="productInvolved">Product Involved</label>
-                <select class="cots-support__main__form__input-field" id="productInvolved" required>
-                    <option value="">Select from list....</option>
+                <select  class="cots-support__main__form__input-field" id="productInvolved" required>
                 </select>
                 <section id="productInvolvedError" class="cots-support__main__form__errortext"></section>
             </section>
@@ -118,9 +119,20 @@
             </section>
 
             <button class="cots-support__main__form__submit-button">Submit request &nbsp; &nbsp; &#8594</button>
-
         </form>
     </main>
+    <script id="ddtemplate" type="text/x-handlebars-template">
+                {{#each data}}
+                    <option value="{{@key}}">{{@key}}</option>
+                {{/each}} 
+    </script>
+
+    <script id="pitemplate" type="text/x-handlebars-template">
+        {{#each .}}
+            <option>{{product}}</option>
+        {{/each}}   
+    </script>
+
     <script src="./form.js"></script>
 </body>
 
