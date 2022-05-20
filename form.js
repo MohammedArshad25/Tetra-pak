@@ -1,8 +1,5 @@
 getObject();
 
-// import { message } from "./script1";
-// console.log(message);
-
  let obj="";
 async function getObject()
 {
@@ -13,18 +10,12 @@ async function getObject()
       }).catch(err => {
         console.log("error")
       });
-
       createHTML(obj);
 
 }
-
-
-
-
-
-function validateForm() {
+ 
+const validateForm = () =>{
     event.preventDefault()
-
     let technical = document.getElementById('technicalIssues');
     let support = document.getElementById('productSupport');
     let company = document.getElementById('company');
@@ -36,33 +27,23 @@ function validateForm() {
 
     let listOfId = [company,customerSite,affectedSystem,productInvolved,shortDescription, question]
 
-    if(technical.checked || support.checked ) {
-        document.getElementById('radioError').innerHTML="";
-    } else {
-        document.getElementById('radioError').innerHTML="Please select one option";
-         }
+    document.getElementById('radioError').innerHTML=(technical.checked || support.checked)?"": "Please select one option";
 
-    for(let i in listOfId)
-    {
-        let currentId= listOfId[i].id
+    listOfId.forEach(function(Id){
+        let currentId= Id.id;
         let inputElement = document.getElementById(`${currentId}`);
         let currentElement = document.getElementById(`${currentId}Error`);
 
-        if(listOfId[i].value == null || listOfId[i].value=="") {
-            currentElement.innerHTML="Please fill this field";
-            inputElement.classList.add("error");
-        } else {
-                currentElement.innerHTML="";
-                inputElement.classList.remove("error");
-                }
-    }
+        (Id.value == null || Id.value == "") ? 
+                                            (currentElement.innerHTML="Please fill this field", 
+                                            inputElement.classList.add("error")) :
+                                            (  currentElement.innerHTML="",
+                                            inputElement.classList.remove("error"));
+    });
     
 }
 
-
-
-
-function createHTML(obj) {
+const createHTML = (obj) => {
     var rawTemplate = document.getElementById("ddtemplate").innerHTML;
     var compiledTemplate = Handlebars.compile(rawTemplate);
     var ourGeneratedHTML = compiledTemplate(obj);
@@ -71,14 +52,13 @@ function createHTML(obj) {
     petsContainer.insertAdjacentHTML('beforeend',ourGeneratedHTML);
 }
 
-function setProductList() {
+const setProductList = () => {
     let affectedSystem = document.getElementById("affectedSystems").value;
     var rawTemplate = document.getElementById("pitemplate").innerHTML;
     var compiledTemplate = Handlebars.compile(rawTemplate);
     var ourGeneratedHTML = compiledTemplate(obj.data[affectedSystem]);
     var ASContainer = document.getElementById("productInvolved");
     ASContainer.innerHTML= ourGeneratedHTML;
-
 }
 
 

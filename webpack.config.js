@@ -1,6 +1,5 @@
 module.exports = { 
 
-
     //define an entry point 
 
     entry:'./form.js',
