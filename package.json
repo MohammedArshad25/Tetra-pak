@@ -1,38 +1,41 @@
 {
-
   "devDependencies": {
-
     "eslint": "^8.13.0",
-
     "node-sass": "^7.0.1",
-
     "sass-lint": "^1.13.1",
-
     "sass-loader": "^12.6.0",
-
     "webpack": "^5.72.0",
-
     "webpack-cli": "^4.9.2"
-
   },
-
   "dependencies": {
-
     "@babel/core": "^7.17.10",
-
     "@babel/preset-env": "^7.17.10",
-
     "babel-loader": "^8.2.5",
-
+    "chai": "^4.3.6",
     "css-loader": "^6.7.1",
-
     "handlebars": "^4.7.7",
-
+    "mocha": "^10.0.0",
     "npm-git-install": "^0.3.0",
-
     "style-loader": "^3.3.1"
-
-  }
-
+  },
+  "name": "training",
+  "version": "1.0.0",
+  "description": "simple app for testing",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammedArshad25/Tetra-pak.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohammedArshad25/Tetra-pak/issues"
+  },
+  "homepage": "https://github.com/MohammedArshad25/Tetra-pak#readme"
 }
-
